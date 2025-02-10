@@ -21,7 +21,8 @@ def get_weather() -> None:
             f"{data["location"]["localtime"]}"
         )
         print(
-            f"Weather: {weather["temp_c"]}°C, {weather["condition"]["text"]}"
+            f"Weather: {weather["temp_c"]}°C, "
+            f"{weather["condition"]["text"]}"
         )
     except requests.exceptions.RequestException as e:
         print(f"Error fetching weather data: {e}")

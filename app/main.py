@@ -15,11 +15,14 @@ def get_weather() -> None:
         response.raise_for_status()  # Проверка на ошибки HTTP
         data = response.json()
         weather = data["current"]
+
         print(
             f"Paris, {data["location"]["country"]} - "
-            f"{data["location"]["localtime"]}")
+            f"{data["location"]["localtime"]}"
+        )
         print(
-            f"Weather: {weather["temp_c"]}°C, {weather["condition"]["text"]}")
+            f"Weather: {weather["temp_c"]}°C, {weather["condition"]["text"]}"
+        )
     except requests.exceptions.RequestException as e:
         print(f"Error fetching weather data: {e}")
 
